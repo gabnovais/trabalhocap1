@@ -21,17 +21,14 @@ import javax.persistence.Table;
 public class Product implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String name;
-	
+	private String name;	
 	@Column(columnDefinition = "TEXT")
 	private String description;
 	private Double price;
 	private String imgUrl;
-	
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant date;
 	
@@ -118,9 +115,12 @@ public class Product implements Serializable{
 		this.date = date;
 	}
 
-
 	public Set<Category> getCategories() {
 		return categories;
+	}
+
+	public void setCategories(Set<Category> categories) {
+		this.categories = categories;
 	}
 
 
